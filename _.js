@@ -1,8 +1,8 @@
 const _ = {
     // clamp
     clamp(number, lower, upper) {
-        let lowerClampedValue = Math.max(number, lower);
-        let clampedValue = Math.min(lowerClampedValue, upper);
+        const lowerClampedValue = Math.max(number, lower);
+        const clampedValue = Math.min(lowerClampedValue, upper);
         return clampedValue;
     }, // inRange
     inRange(number, start, end) {
@@ -29,18 +29,18 @@ const _ = {
         } // isInRange boolean expression
     }, //words
     words(string) {
-        let words = string.split(' ');
+        const words = string.split(' ');
         return words;
     }, // pad
     pad(string, length) {
         if (string.length >= length) {
             return string;
         } else {
-            let startPaddingLength = Math.floor((length - string.length) / 2); // start padding calculation
-            let endPaddingLength = length - string.length - startPaddingLength; // end padding calculation
+            const startPaddingLength = Math.floor((length - string.length) / 2); // start padding calculation
+            const endPaddingLength = length - string.length - startPaddingLength; // end padding calculation
 
 
-            let paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength); // concatenated string
+            const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength); // concatenated string
             return paddedString;
 
         }
@@ -67,8 +67,8 @@ const _ = {
     }, // findKey
     findKey(object, predicate) {
         for (let key in object) {
-            let value = object[key];
-            let predicateReturnValue = predicate(value);
+            const value = object[key];
+            const predicateReturnValue = predicate(value);
             if (predicateReturnValue === true) {
 
                 return key;
@@ -95,7 +95,7 @@ const _ = {
                 return dropNumber;
             }
         });
-        let droppedArray = this.drop(array, dropNumber);
+        const droppedArray = this.drop(array, dropNumber);
         return droppedArray;
 
     }, // chunk
@@ -107,7 +107,7 @@ const _ = {
         let arrayChunks = []; // new variable = empty array
 
         for (let i = 0; i < array.length; i += size) {
-            let arrayChunk = array.slice(i, i + size);
+            const arrayChunk = array.slice(i, i + size);
             arrayChunks.push(arrayChunk);
         } // for loop
         return arrayChunks;
